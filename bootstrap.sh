@@ -5,13 +5,20 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin main;
 
 function doIt() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude "bootstrap.sh" \
-		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
+	FILES=`find . -name '*' \
+		-and ! -name '.' \
+		-and ! -name 'README.md' \
+		-and ! -name 'bootstrap.sh' \
+		-and ! -path './.git/*'  \
+		-and ! -name '.git' \
+		-and ! -name '.DS_Store' \
+		-and ! -name 'LICENSE-MIT.txt'`
+	while read -r file; do
+		dir=$(dirname "${file}")
+		dir="${dir:1}"
+		dest="${HOME}/cptest${dir}"
+		cp -vfa "${file}" "${dest}"
+	done <<< "${FILES}"
 	source ~/.bash_profile;
 }
 
