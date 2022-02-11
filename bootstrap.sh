@@ -15,8 +15,10 @@ function doIt() {
 		-and ! -name 'LICENSE-MIT.txt'`
 	while read -r file; do
 		dir=$(dirname "${file}")
-		dir="${dir:1}"
-		dest="${HOME}/cptest${dir}"
+		# dir either starts with a './' or is '.'
+		# make it so it always starts with a '/', or is ''
+		dir=${dir:1}
+		dest="${HOME}${dir}"
 		cp -vfa "${file}" "${dest}"
 	done <<< "${FILES}"
 	source ~/.bash_profile;
