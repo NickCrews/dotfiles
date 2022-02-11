@@ -1,6 +1,6 @@
 # Nick’s dotfiles
 
-_Forked from github.com/mathiasbynens/dotfiles_
+_Forked from [github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)_
 
 ![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
 
