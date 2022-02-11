@@ -154,6 +154,14 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[pull]
+	
+	# https://salferrarello.com/git-warning-pulling-without-specifying-how-to-reconcile-divergent-branches-is-discouraged/
+    # Only do a pull if a clean FF is possible.
+	# If a clean FF is not possible, then we have to explicitly specify
+	# how to reconcile the divergent branches: rebase or merge
+	ff = only
+
 [push]
 
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
