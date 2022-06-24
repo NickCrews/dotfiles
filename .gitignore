@@ -20,3 +20,6 @@ Thumbs.db
 
 #Environment secrets
 .env
+
+# Allows me to have some scratch space in a git repo that won't get commited
+.scratch
