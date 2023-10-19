@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Running as `source bootstrap.sh` from zsh fails. You need to run it as bash
+# so simply `./bootstrap.sh` or `bash bootstrap.sh` works.
 
 cd "$(dirname "${BASH_SOURCE}")";
 
