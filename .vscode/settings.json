@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Default Dark Modern",
+    "editor.rulers": [80, 88], // PEP8 guideline and black line length
     "git.autofetch": true,
     "git.confirmSync": false,
     "github.copilot.enable": {
@@ -19,6 +20,5 @@
     "notebook.cellToolbarVisibility": "hover",
     "notebook.cellToolbarLocation": {
         "default": "left"
-    },
-    "git-blame.gitWebUrl": ""
+    }
 }
