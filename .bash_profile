@@ -56,7 +56,7 @@ ln ~/.vscode/settings.json "$VSCODE_SETTINGS"
 unset VSCODE_SETTINGS
 
 # Require being in a venv to pip install anything
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true
 
 # Init pyenv
 # Per instructions from running `pyenv init`
