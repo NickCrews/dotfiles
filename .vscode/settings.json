@@ -20,5 +20,9 @@
     "notebook.cellToolbarVisibility": "hover",
     "notebook.cellToolbarLocation": {
         "default": "left"
-    }
+    },
+    "jupyter.runStartupCommands": [
+        "%load_ext autoreload",
+        "%autoreload 2"
+     ]
 }
