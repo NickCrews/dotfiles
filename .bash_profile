@@ -49,12 +49,6 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter python python3" killall;
 
-# symlink vscode settings so vscode picks up on them
-VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
-rm "$VSCODE_SETTINGS"
-ln ~/.vscode/settings.json "$VSCODE_SETTINGS"
-unset VSCODE_SETTINGS
-
 # Require being in a venv to pip install anything
 # export PIP_REQUIRE_VIRTUALENV=true
 
