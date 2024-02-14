@@ -3,6 +3,10 @@
 	email = nicholas.b.crews@gmail.com
 [alias]
 
+	# better branch, with number commits ahead and behind upstream,
+	# ordered by most recent commit
+	bb = "!git for-each-ref --sort='-committerdate' --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) - %(color:blue)%(subject)%(color:reset) %(color:magenta)%(trailers:unfold,only,separator=%0A)%(color:reset)' refs/heads"
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -18,8 +22,8 @@
 	# Pull in remote changes for the current repository and all its submodules.
 	p = pull --recurse-submodules
 
-	# Clone a repository including all submodules.
-	c = clone --recursive
+	# Cherrypick
+	cp = cherry-pick
 
 	# Commit all changes.
 	ca = !git add -A && git commit -av
