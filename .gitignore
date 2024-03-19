@@ -1,6 +1,7 @@
 # Python stuff
 *.pyc
-.venv
+# ignore .venv but also .venv39, etc
+.venv*
 .python-version
 
 # Folder view configuration files
