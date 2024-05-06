@@ -148,4 +148,17 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # Make it easier to enter python virtual environments
-alias venv='ls -1q .*/bin/activate | wc -l | grep "1" &> /dev/null && source .*/bin/activate'
+venv() {
+	# if given a directory like `venv foo`, look for a virtualenv in `./foo`.
+	# Otherwise, get the first virtualenv in mathing `.venv*` directories.
+	if [ -d "$1" ]; then
+		venv_dir="$1/bin/activate"
+	else
+		venv_dir="$(ls -1q .venv*/bin/activate | sort | head -n1)"
+	fi
+	if [ -f "$venv_dir" ]; then
+		. "$venv_dir"
+	else
+		echo "No virtualenv found in $venv_dir"
+	fi
+}
